@@ -1,0 +1,42 @@
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideLogoFooterMixin {
+  position: sticky;
+  bottom: 0;
+  z-index: 4000;
+  background: inherit;
+  // filter: saturate(0.7);
+}
+
+.vps-toolbar {
+  .sideLogoFooterMixin();
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  line-height: normal;
+  &>div {
+      .centered;
+      cursor: pointer;
+  }
+  &-messages {
+      position: relative;
+      .vps-dropdown {
+          left: -70px;
+      }
+  }
+  &-notifications,
+  &-settings {
+      // position: relative;
+      .vps-dropdown {
+          left: 0px;
+      }
+  }
+}
